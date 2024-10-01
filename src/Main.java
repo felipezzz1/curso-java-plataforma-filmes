@@ -48,7 +48,10 @@ public class Main {
         movieList.add(myMovie);
         movieList.add(randomMovie);
         System.out.println("List Size: " + movieList.size());
-        System.out.println(movieList.get(0).getName());
-        System.out.println(movieList.get(1).getName());
+        System.out.println(movieList);
+
+        for (Movie movie : movieList) {
+            System.out.println(movie.getName());
+        }
     }
 }
