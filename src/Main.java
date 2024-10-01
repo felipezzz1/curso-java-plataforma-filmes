@@ -1,4 +1,5 @@
 import br.com.fezor.screenmatch.models.Movie;
+import br.com.fezor.screenmatch.models.Series;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,5 +13,9 @@ public class Main {
         myMovie.rateMovie(8);
         myMovie.rateMovie(10);
         System.out.println(myMovie.getNumberOfRatings());
+
+        Series lost = new Series();
+        lost.setName("Lost");
+        lost.list();
     }
 }
