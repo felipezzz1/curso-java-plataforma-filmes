@@ -8,9 +8,8 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Movie myMovie = new Movie();
+        Movie myMovie = new Movie("Batman");
 
-        myMovie.setName("Batman");;
         myMovie.setYearOfRelease(1990);;
         myMovie.setDuration(165);
 
@@ -38,9 +37,8 @@ public class Main {
         recomendationFilter.filter(episode);
         recomendationFilter.filter(myMovie);
 
-        Movie randomMovie = new Movie();
+        Movie randomMovie = new Movie("Spider-Man");
         randomMovie.setDuration(200);
-        randomMovie.setName("Spider-Man");
         randomMovie.setYearOfRelease(2002);
         randomMovie.rateMovie(10);
 
