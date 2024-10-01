@@ -6,6 +6,10 @@ public class Main {
         myMovie.yearOfRelease = 1990;
         myMovie.duration = 165;
 
-        System.out.println(myMovie.name);
+        myMovie.listMovie();
+        myMovie.rateMovie(9.9);
+        myMovie.rateMovie(8);
+        myMovie.rateMovie(10);
+        myMovie.listMovie();
     }
 }
