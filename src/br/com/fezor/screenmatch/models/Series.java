@@ -1,13 +1,13 @@
 package br.com.fezor.screenmatch.models;
 
 public class Series extends Title{
-    private int Seasons;
+    private int seasons;
     private int episodesPerSeason;
     private boolean active;
     private int minutesPerEpisode;
 
     public int getSeasons() {
-        return Seasons;
+        return seasons;
     }
 
     public int getEpisodesPerSeason() {
@@ -23,7 +23,7 @@ public class Series extends Title{
     }
 
     public void setSeasons(int seasons) {
-        Seasons = seasons;
+        this.seasons = seasons;
     }
 
     public void setEpisodesPerSeason(int episodesPerSeason) {
@@ -36,5 +36,10 @@ public class Series extends Title{
 
     public void setMinutesPerEpisode(int minutesPerEpisode) {
         this.minutesPerEpisode = minutesPerEpisode;
+    }
+
+    @Override
+    public int getDuration() {
+        return seasons * episodesPerSeason * minutesPerEpisode;
     }
 }

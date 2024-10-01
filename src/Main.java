@@ -16,6 +16,9 @@ public class Main {
 
         Series lost = new Series();
         lost.setName("Lost");
-        lost.list();
+        lost.setSeasons(10);
+        lost.setEpisodesPerSeason(10);
+        lost.setMinutesPerEpisode(50);
+        System.out.println("Duration in minutes to watch Lost: " + lost.getDuration());
     }
 }
