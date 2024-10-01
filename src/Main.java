@@ -4,6 +4,8 @@ import br.com.fezor.screenmatch.models.Episode;
 import br.com.fezor.screenmatch.models.Movie;
 import br.com.fezor.screenmatch.models.Series;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Movie myMovie = new Movie();
@@ -36,5 +38,17 @@ public class Main {
         recomendationFilter.filter(episode);
         recomendationFilter.filter(myMovie);
 
+        Movie randomMovie = new Movie();
+        randomMovie.setDuration(200);
+        randomMovie.setName("Spider-Man");
+        randomMovie.setYearOfRelease(2002);
+        randomMovie.rateMovie(10);
+
+        ArrayList<Movie> movieList = new ArrayList<>();
+        movieList.add(myMovie);
+        movieList.add(randomMovie);
+        System.out.println("List Size: " + movieList.size());
+        System.out.println(movieList.get(0).getName());
+        System.out.println(movieList.get(1).getName());
     }
 }
