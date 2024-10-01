@@ -8,17 +8,13 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Movie myMovie = new Movie("Batman");
-
-        myMovie.setYearOfRelease(1990);;
-        myMovie.setDuration(165);
+        Movie myMovie = new Movie("Batman", 1990, 165);
 
         myMovie.rateMovie(9.9);
         myMovie.rateMovie(8);
         myMovie.rateMovie(10);
 
-        Series lost = new Series();
-        lost.setName("Lost");
+        Series lost = new Series("Lost", 2000, 500);
         lost.setSeasons(10);
         lost.setEpisodesPerSeason(10);
         lost.setMinutesPerEpisode(50);
@@ -37,9 +33,7 @@ public class Main {
         recomendationFilter.filter(episode);
         recomendationFilter.filter(myMovie);
 
-        Movie randomMovie = new Movie("Spider-Man");
-        randomMovie.setDuration(200);
-        randomMovie.setYearOfRelease(2002);
+        Movie randomMovie = new Movie("Spider-Man", 2002, 200);
         randomMovie.rateMovie(10);
 
         ArrayList<Movie> movieList = new ArrayList<>();

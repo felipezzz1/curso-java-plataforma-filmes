@@ -8,6 +8,12 @@ public class Title {
     private int numberOfRatings;
     private int duration;
 
+    public Title(String name, int yearOfRelease, int duration) {
+        this.name = name;
+        this.yearOfRelease = yearOfRelease;
+        this.duration = duration;
+    }
+
     public String getName() {
         return name;
     }

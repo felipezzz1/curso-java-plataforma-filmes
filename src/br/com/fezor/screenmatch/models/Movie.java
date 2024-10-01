@@ -5,8 +5,8 @@ import br.com.fezor.screenmatch.calculations.Classification;
 public class Movie extends Title implements Classification {
     private String director;
 
-    public Movie(String name){
-        this.setName(name);
+    public Movie(String name, int yearOfRelease, int duration) {
+        super(name, yearOfRelease, duration);
     }
 
     public String getDirector() {
