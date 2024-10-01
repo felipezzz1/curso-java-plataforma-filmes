@@ -1,3 +1,4 @@
+import br.com.fezor.screenmatch.calculations.TimestampCalculator;
 import br.com.fezor.screenmatch.models.Movie;
 import br.com.fezor.screenmatch.models.Series;
 
@@ -20,5 +21,10 @@ public class Main {
         lost.setEpisodesPerSeason(10);
         lost.setMinutesPerEpisode(50);
         System.out.println("Duration in minutes to watch Lost: " + lost.getDuration());
+
+        TimestampCalculator calculator = new TimestampCalculator();
+        calculator.include(myMovie);
+        System.out.println(calculator.getTotalTime());
+
     }
 }
