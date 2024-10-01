@@ -1,4 +1,6 @@
+import br.com.fezor.screenmatch.calculations.RecomendationFilter;
 import br.com.fezor.screenmatch.calculations.TimestampCalculator;
+import br.com.fezor.screenmatch.models.Episode;
 import br.com.fezor.screenmatch.models.Movie;
 import br.com.fezor.screenmatch.models.Series;
 
@@ -13,7 +15,6 @@ public class Main {
         myMovie.rateMovie(9.9);
         myMovie.rateMovie(8);
         myMovie.rateMovie(10);
-        System.out.println(myMovie.getNumberOfRatings());
 
         Series lost = new Series();
         lost.setName("Lost");
@@ -24,7 +25,16 @@ public class Main {
 
         TimestampCalculator calculator = new TimestampCalculator();
         calculator.include(myMovie);
-        System.out.println(calculator.getTotalTime());
+
+        RecomendationFilter recomendationFilter = new RecomendationFilter();
+
+        Episode episode = new Episode();
+        episode.setNumber(1);
+        episode.setSerie(lost);
+        episode.setVisualizations(1200);
+
+        recomendationFilter.filter(episode);
+        recomendationFilter.filter(myMovie);
 
     }
 }
