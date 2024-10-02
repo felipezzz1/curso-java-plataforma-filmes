@@ -4,12 +4,11 @@ import br.com.fezor.screenmatch.models.Movie;
 import br.com.fezor.screenmatch.models.Series;
 import br.com.fezor.screenmatch.models.Title;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class MainWithLists {
     public static void main(String[] args) {
-        Movie myMovie = new Movie("Batman", 1990, 165);
+        Movie myMovie = new Movie("Batman", 2006, 165);
         Series lost = new Series("Lost", 2000, 500);
         Movie randomMovie = new Movie("Spider-Man", 2002, 200);
 
@@ -17,7 +16,7 @@ public class MainWithLists {
         lost.rateMovie(2);
         randomMovie.rateMovie(4);
 
-        ArrayList<Title> movieList = new ArrayList<>();
+        List<Title> movieList = new LinkedList<>();
         movieList.add(myMovie);
         movieList.add(randomMovie);
         movieList.add(lost);
@@ -30,7 +29,7 @@ public class MainWithLists {
             System.out.println(item.averageRating());
         }
 
-        ArrayList<String> searchByArtist = new ArrayList<>();
+        List<String> searchByArtist = new LinkedList<>();
         searchByArtist.add("Van Damme");
         searchByArtist.add("Adam Sandler");
         searchByArtist.add("The rock");
@@ -44,5 +43,7 @@ public class MainWithLists {
             System.out.println(i.getName());
         }
 
+        movieList.sort(Comparator.comparing(Title::getYearOfRelease));
+        System.out.println(movieList);
     }
 }
