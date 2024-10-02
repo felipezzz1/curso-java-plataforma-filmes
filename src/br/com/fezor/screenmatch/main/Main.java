@@ -1,3 +1,5 @@
+package br.com.fezor.screenmatch.main;
+
 import br.com.fezor.screenmatch.calculations.RecomendationFilter;
 import br.com.fezor.screenmatch.calculations.TimestampCalculator;
 import br.com.fezor.screenmatch.models.Episode;

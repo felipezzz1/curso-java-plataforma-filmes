@@ -1,6 +1,6 @@
 package br.com.fezor.screenmatch.models;
 
-public class Title {
+public class Title implements Comparable<Title>{
     private String name;
     private int yearOfRelease;
     boolean isIncludedInPlan;
@@ -72,5 +72,10 @@ public class Title {
         }else{
             return totalRating/numberOfRatings;
         }
+    }
+
+    @Override
+    public int compareTo(Title otherTitle) {
+        return this.getName().compareTo(otherTitle.getName());
     }
 }
