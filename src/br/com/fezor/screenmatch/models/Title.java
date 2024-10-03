@@ -1,5 +1,6 @@
 package br.com.fezor.screenmatch.models;
 
+import br.com.fezor.screenmatch.exception.InvalidYearException;
 import com.google.gson.annotations.SerializedName;
 
 public class Title implements Comparable<Title>{
@@ -20,6 +21,10 @@ public class Title implements Comparable<Title>{
 
     public Title(TitleOmdb myTitle) {
         this.name = myTitle.title();
+
+        if(myTitle.year().length() > 4){
+            throw new InvalidYearException("The year has more than 4 characters");
+        }
         this.yearOfRelease = Integer.valueOf(myTitle.year());
         this.duration = Integer.valueOf(myTitle.runtime().substring(0,2));
     }
