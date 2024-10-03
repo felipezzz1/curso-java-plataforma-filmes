@@ -21,25 +21,32 @@ public class MainWithSearch {
         var search = read.nextLine();
 
         String address = "https://www.omdbapi.com/?t=" + search + "&apikey=" + API_KEY;
+        try{
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(address))
+                    .build();
 
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(address))
-                .build();
+            HttpResponse<String> response = client
+                    .send(request, HttpResponse.BodyHandlers.ofString());
 
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
+            String json = response.body();
+            System.out.println(json);
 
-        String json = response.body();
-        System.out.println(json);
+            Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                    .create();
+            TitleOmdb myTitle = gson.fromJson(json, TitleOmdb.class);
+            System.out.println(myTitle);
 
-        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                .create();
-        TitleOmdb myTitle = gson.fromJson(json, TitleOmdb.class);
-        System.out.println(myTitle);
 
-        Title myTitle1 = new Title(myTitle);
+            Title myTitle1 = new Title(myTitle);
+            System.out.println(myTitle1);
+        }catch (Exception e){
+            System.out.println("An error occurred: ");
+            System.out.println(e.getMessage());
+        }
 
-        System.out.println(myTitle1);
+        System.out.println("The program run correctly");
+
     }
 }
