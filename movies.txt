@@ -1,0 +1,26 @@
+[
+  {
+    "Title": "Matrix",
+    "Year": 1993,
+    "IsIncludedInPlan": false,
+    "TotalRating": 0.0,
+    "NumberOfRatings": 0,
+    "Duration": 60
+  },
+  {
+    "Title": "Dogville",
+    "Year": 2003,
+    "IsIncludedInPlan": false,
+    "TotalRating": 0.0,
+    "NumberOfRatings": 0,
+    "Duration": 17
+  },
+  {
+    "Title": "Avatar",
+    "Year": 2009,
+    "IsIncludedInPlan": false,
+    "TotalRating": 0.0,
+    "NumberOfRatings": 0,
+    "Duration": 16
+  }
+]
