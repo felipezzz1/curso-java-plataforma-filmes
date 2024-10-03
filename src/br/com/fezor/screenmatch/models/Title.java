@@ -1,7 +1,11 @@
 package br.com.fezor.screenmatch.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Title implements Comparable<Title>{
+    @SerializedName("Title")
     private String name;
+    @SerializedName("Year")
     private int yearOfRelease;
     boolean isIncludedInPlan;
     private double totalRating;
@@ -12,6 +16,12 @@ public class Title implements Comparable<Title>{
         this.name = name;
         this.yearOfRelease = yearOfRelease;
         this.duration = duration;
+    }
+
+    public Title(TitleOmdb myTitle) {
+        this.name = myTitle.title();
+        this.yearOfRelease = Integer.valueOf(myTitle.year());
+        this.duration = Integer.valueOf(myTitle.runtime().substring(0,2));
     }
 
     public String getName() {
@@ -77,5 +87,14 @@ public class Title implements Comparable<Title>{
     @Override
     public int compareTo(Title otherTitle) {
         return this.getName().compareTo(otherTitle.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "Title{" +
+                "name='" + name + '\'' +
+                ", yearOfRelease=" + yearOfRelease +
+                ", duration=" + duration +
+                '}';
     }
 }
